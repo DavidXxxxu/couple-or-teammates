@@ -26,13 +26,41 @@ const questions = [
   ['child', '如果孩子长大离开家，你想象中的你们会是？', '如果未来不再有房贷、工作和家庭任务牵着你们，你想象中的你们会是？', ['终于又有更多时间一起生活', '还是会互相陪伴，各自也有空间', '可能会越来越各过各的', '我很难想象两个人还能靠什么连接'], 'When the children grow up and leave home, what do you imagine the two of you will be like?', 'If mortgages, work, and family responsibilities no longer tied you together, what do you imagine the two of you would be like?', ['We would finally have more time to share life again', 'We would stay close while keeping our own space', 'We might increasingly live separate lives', 'I find it hard to imagine what would still connect us']]
 ];
 
+const questionsHant = [
+  ['今天遇到一件特別有意思的事，你第一反應通常是？','',['馬上想告訴 TA','見面時會告訴 TA','先告訴朋友，想起來再說','通常不會特別告訴 TA']],
+  ['家裡突然出現一件麻煩事時，你們更像是？','',['自然站在一起，商量著解決','分工處理，基本可靠','總要一個人催著另一個人','各自躲開，最後常由一個人收拾']],
+  ['終於有兩個小時完全屬於你們自己，你最真實的感受是？','',['很期待和 TA 一起做點什麼','待在一起也挺舒服','各自安排會更輕鬆','反而不知道兩個人能做什麼']],
+  ['對於 TA 最近在忙什麼、煩什麼，你了解多少？','',['大部分都知道，也知道 TA 的感受','知道主要的事情','只知道和家庭有關的部分','常常是別人比我更清楚']],
+  ['如果一天完全不聊孩子，你們還剩下多少共同話題？','如果一天完全不聊家務、帳單和工作，你們還剩下多少共同話題？',['很多，常常聊不完','還有一些','不太多','好像真的沒什麼']],
+  ['當你感到委屈或壓力很大時，TA 通常是？','',['我最想找的人，也願意認真聽','可以聊，但不一定完全懂','說了常常變成講道理或爭論','我寧願自己消化或找別人']],
+  ['你如何評價你們現在的家庭分工？','',['不必精確對半，但彼此都覺得公平','偶有不滿，整體能協調','一個人明顯承擔更多','分工已經成為長期矛盾']],
+  ['如果突然有兩天假期，而且孩子有人照顧，你會？','如果突然多出兩天不用處理任何事情的假期，你會？',['第一反應就是想和 TA 單獨出去','一起安排也不錯','更想各自找朋友或做自己的事','完全沒想過兩個人單獨出去']],
+  ['你們的社交圈和日常生活，通常是？','',['各自有空間，也有不少共同部分','知道彼此的朋友和安排','交集很少，互不打擾','像兩條幾乎不相交的線']],
+  ['孩子不在身邊時，你們相處的狀態通常是？','沒有家務和任務需要處理時，你們相處的狀態通常是？',['更像回到了兩個人的時候','輕鬆，但不一定會特別安排','各自滑手機或忙自己的','明顯尷尬，甚至沒什麼可說']],
+  ['TA 最近一次讓你由衷欣賞或心動，是多久以前？','',['最近就有','幾個月內有過','已經很久了','我幾乎想不起來']],
+  ['當你特別累、暫時顧不過來時，TA 會？','',['主動發現並把事情接過去','只要我開口，通常會幫忙','要反覆提醒才行動','覺得那本來就是我的事']],
+  ['你們現在主動製造「兩人時刻」的頻率是？','',['經常，哪怕只是散步或吃頓飯','偶爾會安排','通常要等特殊日子','幾乎沒有']],
+  ['面對未來三到五年，你們之間有怎樣的共同想像？','',['經常聊，而且大方向一致','討論過一些現實計畫','主要各想各的','很少把彼此放進未來規劃']],
+  ['你們最近一次不圍繞孩子做決定，而是單純考慮彼此需要，是？','你們最近一次不圍繞現實任務，而是單純考慮彼此需要，是？',['最近就有，而且很自然','偶爾會這樣','已經記不太清','好像很少發生']],
+  ['你們發生分歧後，通常會怎樣結束？','',['會修復，也願意理解對方','冷靜後基本能說開','表面過去了，情緒還留著','沉默、冷戰，問題反覆出現']],
+  ['如果要完成一件需要長期配合的大事，你對 TA 的信任程度是？','',['很放心，我們能互相補位','基本放心，偶爾需要提醒','我會擔心 TA 掉鏈子','我寧願自己來']],
+  ['晚上事情都結束後，你們最常見的畫面是？','',['會聊天、靠在一起或共同做點什麼','有交流，也會各自放鬆','大多數時候各滑各的手機','幾乎沒有真正的相處']],
+  ['做一個對自己很重要的決定前，你會把 TA 的想法放在哪裡？','',['很重要，我們會認真討論','會聽取，但最後自己決定','通知多於商量','通常沒必要讓 TA 參與']],
+  ['別人臨時幫你們照顧孩子一晚，你們最可能？','突然多出一個完全不用處理現實事務的晚上，你們最可能？',['很自然地安排屬於兩個人的時間','一起吃飯或看部電影','各自休息，偶爾說幾句話','分別安排，互不打擾']],
+  ['你對 TA 說「謝謝」「辛苦了」或表達喜歡的頻率是？','',['常常會，而且是真心的','偶爾會表達','心裡知道，但很少說','已經很久沒有這種表達']],
+  ['家裡的「隱形任務」——記日期、溝通、安排、操心——通常由誰承擔？','',['彼此都看得見，也會主動分擔','主要一個人負責，另一個人配合','幾乎全壓在一個人身上','不僅不分擔，還常否定對方的辛苦']],
+  ['如果今天重新認識，在沒有現實條件影響的情況下，你會想繼續了解 TA 嗎？','',['會，而且應該還是會被吸引','可能會，TA 依然值得了解','不太確定','大概不會']],
+  ['你們在同一個空間，卻各忙各的時候，那種感覺更接近？','',['安靜但有連結，很自在','普通的相處狀態','像合租室友，各不相干','我會刻意避開 TA']],
+  ['如果孩子長大離開家，你想像中的你們會是？','如果未來不再有房貸、工作和家庭任務牽著你們，你想像中的你們會是？',['終於又有更多時間一起生活','還是會互相陪伴，各自也有空間','可能會越來越各過各的','我很難想像兩個人還能靠什麼連結']]
+];
+
 const types = {
-  lovers: {code:'LOVR',emoji:'❤️',color:'#e76776',zh:{name:'恋人型夫妻',line:'生活把你们变成了家人，但没有拿走彼此的分享欲。',body:'你们不仅一起经营家庭，也仍然在经营彼此。你们会分享感受、主动靠近，也愿意为两个人保留空间。浪漫未必轰轰烈烈，但关系里仍然有温度和选择感。',notes:['继续保留固定的二人时间','别把默契当作理所当然','让欣赏和感谢被对方听见']},en:{name:'Lovers at Heart',line:'Life has made you family without taking away your desire to share.',body:'You are not only running a household together; you are still tending to each other. You share feelings, move toward one another, and protect space for the relationship. The romance may be quiet, but warmth and a sense of choice are still present.',notes:['Keep a regular time that belongs only to the two of you','Do not take your understanding for granted','Let appreciation and gratitude be heard']}},
-  teammates: {code:'TEAM',emoji:'🤝',color:'#5f8f89',zh:{name:'最佳拍档型',line:'你们很会一起生活，也依然把对方当作重要的人。',body:'可靠与默契是你们关系里最强的底色。你们像队友，但“队友”不是感情退场，而是信任落到了日常。需要留意的是，效率很高的合作有时会悄悄盖过表达和浪漫。',notes:['偶尔做一件没有实际用途的事','多聊感受，少只聊安排','别让可靠成为唯一的赞美']},en:{name:'Best Teammates',line:'You know how to build a life together and still treat each other as important.',body:'Reliability and trust are the strongest parts of your relationship. Being teammates does not mean love has left; it means trust shows up in daily life. Just notice when efficient cooperation begins to crowd out emotional expression and romance.',notes:['Do something together that has no practical purpose','Talk more about feelings, not only logistics','Do not let reliability become the only compliment']}},
-  family: {code:'FAMP',emoji:'🏠',color:'#d49a54',zh:{name:'家庭合伙人型',line:'家庭运行得不错，只是属于“两个人”的部分正在变少。',body:'你们承担责任、处理任务，也许已经形成稳定分工。但关系的重心更偏向“把日子过好”，亲密和分享容易被放到最后。这不等于没有感情，更像是伴侣角色被家庭角色盖住了。',notes:['每周留出30分钟不聊任务','重新做一件恋爱时做过的事','问问 TA 最近真正累在哪里']},en:{name:'Family Partners',line:'The household works well, but the part that belongs to the two of you is shrinking.',body:'You carry responsibilities, handle tasks, and may have built a stable division of labor. The relationship now leans toward keeping life running, while intimacy and sharing are pushed to the end. This does not mean love is gone; the partner role may simply be hidden beneath the family role.',notes:['Set aside 30 minutes each week with no task talk','Do something you used to enjoy while dating','Ask what has truly been exhausting your partner lately']}},
-  parenting: {code:'PARN',emoji:'🧸',color:'#8a77a8',zh:{name:'育儿合伙人型',line:'孩子是你们最强的连接，也可能遮住了夫妻本身。',body:'你们很可能都是负责任的父母，也在认真维持家庭。但当话题、时间和决定都围绕孩子展开，两个人之间原本的连接会越来越难被看见。问题未必是“不爱了”，而是父母身份占据了几乎全部空间。',notes:['创造一次不以孩子为主题的约会','每天分享一件自己的小事','把“我们需要什么”也放进家庭计划']},en:{name:'Parenting Partners',line:'The children are your strongest bond, but they may also be hiding the couple underneath.',body:'You are likely responsible parents who work hard to hold the family together. When every conversation, plan, and decision centers on the children, the connection between the two adults can fade from view. It may not be a lack of love; parenthood may simply be taking up nearly all the space.',notes:['Plan one date that is not about the children','Share one small personal thing each day','Include what the two of you need in family plans']}},
-  parallel: {code:'PARA',emoji:'↔️',color:'#6680a4',zh:{name:'平行生活型',line:'你们还在同一段关系里，但生活的交集正在变窄。',body:'各自独立未必是坏事，真正需要留意的是：你们是否已经习惯不再让对方参与自己的内心和生活。平行久了，冲突可能变少，但连接也会一起变少。',notes:['从一次完整、不被打断的聊天开始','交换彼此最近最在意的一件事','创造一个需要共同参与的小计划']},en:{name:'Parallel Lives',line:'You are still in the same relationship, but your lives overlap less and less.',body:'Independence is not necessarily a problem. What matters is whether you have grown used to keeping your inner worlds and daily lives separate. Living in parallel may reduce conflict, but it can also reduce connection.',notes:['Begin with one complete, uninterrupted conversation','Exchange the one thing each of you cares about most right now','Create a small plan that requires both of you']}},
-  roommates: {code:'ROOM',emoji:'🪑',color:'#7f756f',zh:{name:'搭伙过日子型',line:'责任、习惯和现实仍在维系关系，亲密感却已经很淡。',body:'你们可能仍然履行各自的责任，但彼此越来越像住在同一屋檐下的生活搭子。这个结果不是判决，只是在提醒：关系里有些重要的需要，可能已经很久没有被看见或说出来。',notes:['先确认双方是否都愿意重新靠近','用具体感受代替指责和翻旧账','如果长期痛苦，可考虑寻求专业支持']},en:{name:'Roommates in Practice',line:'Responsibility, habit, and circumstance still hold the relationship together, while intimacy has grown faint.',body:'You may still fulfill your responsibilities, yet increasingly feel like people who simply share a home. This result is not a verdict. It is a reminder that important needs in the relationship may have gone unseen or unspoken for a long time.',notes:['First ask whether both of you want to move closer again','Describe specific feelings instead of blaming or reopening old fights','If the pain has lasted a long time, consider professional support']}}
+  lovers: {code:'LOVR',emoji:'❤️',color:'#e76776',zh:{name:'恋人型夫妻',line:'生活把你们变成了家人，但没有拿走彼此的分享欲。',body:'你们不仅一起经营家庭，也仍然在经营彼此。你们会分享感受、主动靠近，也愿意为两个人保留空间。浪漫未必轰轰烈烈，但关系里仍然有温度和选择感。',notes:['继续保留固定的二人时间','别把默契当作理所当然','让欣赏和感谢被对方听见']},'zh-Hant':{name:'戀人型夫妻',line:'生活把你們變成了家人，但沒有拿走彼此的分享欲。',body:'你們不僅一起經營家庭，也仍然在經營彼此。你們會分享感受、主動靠近，也願意為兩個人保留空間。浪漫未必轟轟烈烈，但關係裡仍然有溫度和選擇感。',notes:['繼續保留固定的兩人時間','別把默契當作理所當然','讓欣賞和感謝被對方聽見']},en:{name:'Lovers at Heart',line:'Life has made you family without taking away your desire to share.',body:'You are not only running a household together; you are still tending to each other. You share feelings, move toward one another, and protect space for the relationship. The romance may be quiet, but warmth and a sense of choice are still present.',notes:['Keep a regular time that belongs only to the two of you','Do not take your understanding for granted','Let appreciation and gratitude be heard']}},
+  teammates: {code:'TEAM',emoji:'🤝',color:'#5f8f89',zh:{name:'最佳拍档型',line:'你们很会一起生活，也依然把对方当作重要的人。',body:'可靠与默契是你们关系里最强的底色。你们像队友，但“队友”不是感情退场，而是信任落到了日常。需要留意的是，效率很高的合作有时会悄悄盖过表达和浪漫。',notes:['偶尔做一件没有实际用途的事','多聊感受，少只聊安排','别让可靠成为唯一的赞美']},'zh-Hant':{name:'最佳拍檔型',line:'你們很會一起生活，也依然把對方當作重要的人。',body:'可靠與默契是你們關係裡最強的底色。你們像隊友，但「隊友」不是感情退場，而是信任落到了日常。需要留意的是，高效率的合作有時會悄悄蓋過表達和浪漫。',notes:['偶爾做一件沒有實際用途的事','多聊感受，少只聊安排','別讓可靠成為唯一的讚美']},en:{name:'Best Teammates',line:'You know how to build a life together and still treat each other as important.',body:'Reliability and trust are the strongest parts of your relationship. Being teammates does not mean love has left; it means trust shows up in daily life. Just notice when efficient cooperation begins to crowd out emotional expression and romance.',notes:['Do something together that has no practical purpose','Talk more about feelings, not only logistics','Do not let reliability become the only compliment']}},
+  family: {code:'FAMP',emoji:'🏠',color:'#d49a54',zh:{name:'家庭合伙人型',line:'家庭运行得不错，只是属于“两个人”的部分正在变少。',body:'你们承担责任、处理任务，也许已经形成稳定分工。但关系的重心更偏向“把日子过好”，亲密和分享容易被放到最后。这不等于没有感情，更像是伴侣角色被家庭角色盖住了。',notes:['每周留出30分钟不聊任务','重新做一件恋爱时做过的事','问问 TA 最近真正累在哪里']},'zh-Hant':{name:'家庭合夥人型',line:'家庭運作得不錯，只是屬於「兩個人」的部分正在變少。',body:'你們承擔責任、處理任務，也許已經形成穩定分工。但關係的重心更偏向「把日子過好」，親密和分享容易被放到最後。這不等於沒有感情，更像是伴侶角色被家庭角色蓋住了。',notes:['每週留出 30 分鐘不聊任務','重新做一件戀愛時做過的事','問問 TA 最近真正累在哪裡']},en:{name:'Family Partners',line:'The household works well, but the part that belongs to the two of you is shrinking.',body:'You carry responsibilities, handle tasks, and may have built a stable division of labor. The relationship now leans toward keeping life running, while intimacy and sharing are pushed to the end. This does not mean love is gone; the partner role may simply be hidden beneath the family role.',notes:['Set aside 30 minutes each week with no task talk','Do something you used to enjoy while dating','Ask what has truly been exhausting your partner lately']}},
+  parenting: {code:'PARN',emoji:'🧸',color:'#8a77a8',zh:{name:'育儿合伙人型',line:'孩子是你们最强的连接，也可能遮住了夫妻本身。',body:'你们很可能都是负责任的父母，也在认真维持家庭。但当话题、时间和决定都围绕孩子展开，两个人之间原本的连接会越来越难被看见。问题未必是“不爱了”，而是父母身份占据了几乎全部空间。',notes:['创造一次不以孩子为主题的约会','每天分享一件自己的小事','把“我们需要什么”也放进家庭计划']},'zh-Hant':{name:'育兒合夥人型',line:'孩子是你們最強的連結，也可能遮住了夫妻本身。',body:'你們很可能都是負責任的父母，也在認真維持家庭。但當話題、時間和決定都圍繞孩子展開，兩個人之間原本的連結會越來越難被看見。問題未必是「不愛了」，而是父母身分占據了幾乎全部空間。',notes:['創造一次不以孩子為主題的約會','每天分享一件自己的小事','把「我們需要什麼」也放進家庭計畫']},en:{name:'Parenting Partners',line:'The children are your strongest bond, but they may also be hiding the couple underneath.',body:'You are likely responsible parents who work hard to hold the family together. When every conversation, plan, and decision centers on the children, the connection between the two adults can fade from view. It may not be a lack of love; parenthood may simply be taking up nearly all the space.',notes:['Plan one date that is not about the children','Share one small personal thing each day','Include what the two of you need in family plans']}},
+  parallel: {code:'PARA',emoji:'↔️',color:'#6680a4',zh:{name:'平行生活型',line:'你们还在同一段关系里，但生活的交集正在变窄。',body:'各自独立未必是坏事，真正需要留意的是：你们是否已经习惯不再让对方参与自己的内心和生活。平行久了，冲突可能变少，但连接也会一起变少。',notes:['从一次完整、不被打断的聊天开始','交换彼此最近最在意的一件事','创造一个需要共同参与的小计划']},'zh-Hant':{name:'平行生活型',line:'你們還在同一段關係裡，但生活的交集正在變窄。',body:'各自獨立未必是壞事，真正需要留意的是：你們是否已經習慣不再讓對方參與自己的內心和生活。平行久了，衝突可能變少，但連結也會一起變少。',notes:['從一次完整、不被打斷的聊天開始','交換彼此最近最在意的一件事','創造一個需要共同參與的小計畫']},en:{name:'Parallel Lives',line:'You are still in the same relationship, but your lives overlap less and less.',body:'Independence is not necessarily a problem. What matters is whether you have grown used to keeping your inner worlds and daily lives separate. Living in parallel may reduce conflict, but it can also reduce connection.',notes:['Begin with one complete, uninterrupted conversation','Exchange the one thing each of you cares about most right now','Create a small plan that requires both of you']}},
+  roommates: {code:'ROOM',emoji:'🪑',color:'#7f756f',zh:{name:'搭伙过日子型',line:'责任、习惯和现实仍在维系关系，亲密感却已经很淡。',body:'你们可能仍然履行各自的责任，但彼此越来越像住在同一屋檐下的生活搭子。这个结果不是判决，只是在提醒：关系里有些重要的需要，可能已经很久没有被看见或说出来。',notes:['先确认双方是否都愿意重新靠近','用具体感受代替指责和翻旧账','如果长期痛苦，可考虑寻求专业支持']},'zh-Hant':{name:'搭夥過日子型',line:'責任、習慣和現實仍在維繫關係，親密感卻已經很淡。',body:'你們可能仍然履行各自的責任，但彼此越來越像住在同一屋簷下的生活搭子。這個結果不是判決，只是在提醒：關係裡有些重要的需要，可能已經很久沒有被看見或說出來。',notes:['先確認雙方是否都願意重新靠近','用具體感受代替指責和翻舊帳','如果長期痛苦，可考慮尋求專業支持']},en:{name:'Roommates in Practice',line:'Responsibility, habit, and circumstance still hold the relationship together, while intimacy has grown faint.',body:'You may still fulfill your responsibilities, yet increasingly feel like people who simply share a home. This result is not a verdict. It is a reminder that important needs in the relationship may have gone unseen or unspoken for a long time.',notes:['First ask whether both of you want to move closer again','Describe specific feelings instead of blaming or reopening old fights','If the pain has lasted a long time, consider professional support']}}
 };
 
 const ui = {
@@ -46,6 +74,17 @@ const ui = {
     relationshipProfile:'关系画像',shapeNote:'不是好坏分数，而是你们目前的关系形状',meaning:'这意味着什么',threeThings:'可以试着做的三件小事',copyResult:'⧉　复制结果',retake:'↻　重新测试',inviteNow:'现在，邀请 TA 回答同一套题',inviteTitle:'你眼中的关系，和 TA 眼中的一样吗？',inviteBody:'TA答完后会自动生成双方类型、五维分数差异和关系一致度。邀请链接不会包含你的25道原始答案。',inviteButton:'⧉　生成并分享邀请链接',yourAnswer:'你刚才的答案',soulQuote:'“如果今天重新认识，你还会选择 TA 吗？”',
     firstPerson:'先完成的人',secondPerson:'后完成的人',compareTitle:(n)=>`你们眼中的这段关系，<br><span>${n}%</span> 相似`,compareIntro:'这不是“默契分”或婚姻好坏分。它表示你们对当前关系状态的感受接近程度。',fiveView:'五维视角对比',barLegend:'红色：先完成的人　蓝色：后完成的人',gap:(n)=>`相差 ${n} 分`,talkArea:'最值得聊一聊的地方',talkTonight:'今晚可以从这三句话开始',finalTalk:'在这段关系里，你最希望我多看见你哪一部分？',shareCompare:'⧉　把对比报告发给 TA',restart:'↻　重新开始',comparePrivacy:'报告链接只包含双方的类型与五项汇总分数，不包含25道原始答案和“最后一道”答案。',closeInsight:'你们在五个维度上的感受整体很接近。真正的默契不是答案完全相同，而是愿意继续确认彼此的真实感受。',gapInsight:(max,who)=>`这是双方感受差异最大的维度，相差 ${max} 分。${who}在这一项上的感受更强。差异不是谁对谁错，而是提醒你们：同一段关系可能正在被两个人以不同方式体验。`,radarLabel:'关系维度雷达图',
     resultShare:(name,code,line,m,labels)=>`我的关系类型是「${name} · ${code}」\n${line}\n${labels[0]} ${m[0]}｜${labels[1]} ${m[1]}｜${labels[2]} ${m[2]}｜${labels[3]} ${m[3]}｜${labels[4]} ${m[4]}`,inviteShare:'我刚做完这个关系测试。想看看我们眼中的这段关系是否一样，邀请你也来测一次。',compareShare:'我们的双人关系对比报告已经生成，看看我们对这段关系的感受有多一致。'
+  },
+  'zh-Hant': {
+    title:'我們是夫妻，還是搭子？',description:'25 道生活場景題，看看你們更像戀人、隊友、家庭合夥人，還是生活搭子。',quiet:'關係觀察測試',footer:'本測試僅供娛樂與關係反思，不屬於心理學、婚姻諮詢或診斷工具。結果不能用於判斷一段關係是否健康或是否應該繼續。',copied:'結果已複製',
+    labels4:['情感連結','兩人世界','家庭合作','平行程度'],childLabel:'孩子依賴',autonomyLabel:'關係自主',
+    talk:['最近一次你真正感到被我理解，是什麼時候？','如果今晚完全不用處理任何任務，你最想和我一起做什麼？','你覺得自己承擔了哪些我可能沒有看見的責任？','哪些獨立空間讓你覺得舒服，哪些時刻又會讓你覺得疏遠？','除去孩子和現實任務，我們還能怎樣重新建立屬於兩個人的連結？'],
+    invitedEyebrow:'TA 邀請你完成雙人測試',defaultEyebrow:'25 道生活場景題 · 約 5 分鐘',invitedHero:'你眼中的我們，<br>和<span>TA</span>一樣嗎？',defaultHero:'你們是夫妻，<br>還是只是<span>搭子</span>？',invitedLede:'請根據你自己的真實感受完成測試。答題結束後，才能同時揭曉雙方結果和關係認知差異。',defaultLede:'愛情、責任、孩子和生活，把你們變成了哪一種關係？別急著下結論，先看看那些最普通的日常。',
+    chooseMode:'選擇測試方式',solo:'我自己測',soloSub:'立即查看自己的關係類型',duo:'邀請伴侶一起測',duoSub:'比較彼此眼中的這段關係',familyLocked:'已由邀請方選擇',chooseFamily:'選擇更符合你們的情況',withChildren:'我們有孩子',withChildrenSub:'包含育兒關係相關場景',withoutChildren:'我們沒有孩子',withoutChildrenSub:'使用伴侶生活通用場景',duoHint:'♡ 你完成後會得到一條專屬邀請連結，再傳給 TA 作答。',accept:'接受邀請，開始測試',startDuo:'先測我的視角',start:'開始測試',privacy:'無需登入 · 不上傳 25 道原始答案 · 邀請連結僅包含彙總結果',possible:'◎ 你們可能是……',
+    back:'← 返回',answerHint:'按真實情況選擇，沒有「正確答案」',finish:'完成答題',next:'下一題',lastUnscored:'最後一道 · 不計分',soulLead:'如果沒有孩子、房子、雙方父母和經濟上的牽絆，今天重新認識——',soulQuestion:'你還會選擇 TA 嗎？',soulOptions:[['yes','會'],['probably','可能會'],['unsure','不知道'],['probablyNot','可能不會']],soulNote:'這道題不會改變結果。它只是想讓你停一下，想一想。',createCompare:'生成雙人對比報告',viewType:'查看我的關係類型',
+    relationshipProfile:'關係畫像',shapeNote:'不是好壞分數，而是你們目前的關係形狀',meaning:'這意味著什麼',threeThings:'可以試著做的三件小事',copyResult:'⧉　複製結果',retake:'↻　重新測試',inviteNow:'現在，邀請 TA 回答同一套題',inviteTitle:'你眼中的關係，和 TA 眼中的一樣嗎？',inviteBody:'TA 答完後會自動生成雙方類型、五維分數差異和關係一致度。邀請連結不會包含你的 25 道原始答案。',inviteButton:'⧉　生成並分享邀請連結',yourAnswer:'你剛才的答案',soulQuote:'「如果今天重新認識，你還會選擇 TA 嗎？」',
+    firstPerson:'先完成的人',secondPerson:'後完成的人',compareTitle:(n)=>`你們眼中的這段關係，<br><span>${n}%</span> 相似`,compareIntro:'這不是「默契分」或婚姻好壞分。它表示你們對當前關係狀態的感受接近程度。',fiveView:'五維視角對比',barLegend:'紅色：先完成的人　藍色：後完成的人',gap:(n)=>`相差 ${n} 分`,talkArea:'最值得聊一聊的地方',talkTonight:'今晚可以從這三句話開始',finalTalk:'在這段關係裡，你最希望我多看見你哪一部分？',shareCompare:'⧉　把對比報告傳給 TA',restart:'↻　重新開始',comparePrivacy:'報告連結只包含雙方的類型與五項彙總分數，不包含 25 道原始答案和「最後一道」答案。',closeInsight:'你們在五個維度上的感受整體很接近。真正的默契不是答案完全相同，而是願意繼續確認彼此的真實感受。',gapInsight:(max,who)=>`這是雙方感受差異最大的維度，相差 ${max} 分。${who}在這一項上的感受更強。差異不是誰對誰錯，而是提醒你們：同一段關係可能正在被兩個人以不同方式體驗。`,radarLabel:'關係維度雷達圖',
+    resultShare:(name,code,line,m,labels)=>`我的關係類型是「${name} · ${code}」\n${line}\n${labels[0]} ${m[0]}｜${labels[1]} ${m[1]}｜${labels[2]} ${m[2]}｜${labels[3]} ${m[3]}｜${labels[4]} ${m[4]}`,inviteShare:'我剛做完這個關係測試。想看看我們眼中的這段關係是否一樣，邀請你也來測一次。',compareShare:'我們的雙人關係對比報告已經生成，看看我們對這段關係的感受有多一致。'
   },
   en: {
     title:'Are We Partners or Just Teammates?',description:'25 everyday scenarios to explore whether your relationship feels romantic, collaborative, family-focused, or more like sharing a life.',quiet:'RELATIONSHIP REFLECTION',footer:'This test is for entertainment and relationship reflection only. It is not a psychological assessment, counseling service, or diagnostic tool, and should not determine whether a relationship is healthy or should continue.',copied:'Copied',
@@ -63,7 +102,10 @@ const ui = {
 const urlLanguage = new URL(location.href).searchParams.get('lang');
 let savedLanguage = '';
 try { savedLanguage = localStorage.getItem('we-two-language') || ''; } catch {}
-const initialLanguage = ['zh','en'].includes(urlLanguage) ? urlLanguage : ['zh','en'].includes(savedLanguage) ? savedLanguage : navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+const languages = ['zh','zh-Hant','en'];
+const browserLanguage = navigator.language.toLowerCase();
+const detectedLanguage = /^zh-(tw|hk|mo|hant)/.test(browserLanguage) ? 'zh-Hant' : browserLanguage.startsWith('zh') ? 'zh' : 'en';
+const initialLanguage = languages.includes(urlLanguage) ? urlLanguage : languages.includes(savedLanguage) ? savedLanguage : detectedLanguage;
 const state = {stage:'intro',mode:'solo',hasChildren:true,current:0,answers:Array(25).fill(0),soul:'',p1:null,p2:null,lang:initialLanguage};
 const app = document.getElementById('app');
 
@@ -81,7 +123,7 @@ function link(kind,payload) { const url=new URL(location.href); url.searchParams
 
 function applyLanguageChrome() {
   const c=text();
-  document.documentElement.lang=state.lang==='zh'?'zh-CN':'en';
+  document.documentElement.lang=state.lang==='zh'?'zh-CN':state.lang==='zh-Hant'?'zh-Hant':'en';
   document.title=c.title;
   document.querySelector('meta[name="description"]').content=c.description;
   document.getElementById('quiet').textContent=c.quiet;
@@ -92,7 +134,7 @@ function applyLanguageChrome() {
   const url=new URL(location.href); url.searchParams.set('lang',state.lang); history.replaceState(null,'',url);
 }
 
-function setLanguage(lang) { if(!['zh','en'].includes(lang)||lang===state.lang)return; state.lang=lang; applyLanguageChrome(); render(); }
+function setLanguage(lang) { if(!languages.includes(lang)||lang===state.lang)return; state.lang=lang; applyLanguageChrome(); render(); }
 
 function radar(values,names,color) {
   const c=130,r=82,pt=(i,v)=>{const a=-Math.PI/2+i*Math.PI*2/5,rr=r*v/100;return[c+Math.cos(a)*rr,c+Math.sin(a)*rr]},poly=v=>values.map((_,i)=>pt(i,v).join(',')).join(' ');
@@ -108,7 +150,17 @@ function intro() {
 }
 
 function quiz() {
-  const c=text(),q=questions[state.current],offset=state.lang==='zh'?1:4,questionText=!state.hasChildren&&q[offset+1]?q[offset+1]:q[offset],answers=q[offset+2],chosen=state.answers[state.current];
+  const c=text(),q=questions[state.current],chosen=state.answers[state.current];
+  let questionText,answers;
+  if(state.lang==='zh-Hant') {
+    const translated=questionsHant[state.current];
+    questionText=!state.hasChildren&&translated[1]?translated[1]:translated[0];
+    answers=translated[2];
+  } else {
+    const offset=state.lang==='zh'?1:4;
+    questionText=!state.hasChildren&&q[offset+1]?q[offset+1]:q[offset];
+    answers=q[offset+2];
+  }
   app.innerHTML=`<section class="quiz"><div class="quiz-meta"><button class="back">${c.back}</button><span>${String(state.current+1).padStart(2,'0')} / 25</span></div><div class="progress"><i style="width:${(state.current+1)/25*100}%"></i></div><div class="question-card"><div class="qno">QUESTION ${String(state.current+1).padStart(2,'0')}</div><h2>${esc(questionText)}</h2><div class="answers">${answers.map((option,i)=>{const v=4-i;return`<label class="answer ${chosen===v?'selected':''}"><input type="radio" name="answer" value="${v}" ${chosen===v?'checked':''}><span>${esc(option)}</span></label>`}).join('')}</div><div class="qactions"><span>${c.answerHint}</span><button class="primary next" ${chosen?'':'disabled'}>${state.current===24?c.finish:c.next}　→</button></div></div></section>`;
   document.querySelector('.back').onclick=()=>{if(state.current===0)state.stage='intro';else state.current--;render()};
   document.querySelectorAll('[name=answer]').forEach(el=>el.onchange=e=>{state.answers[state.current]=Number(e.target.value);render()});
